@@ -4,7 +4,7 @@ def get_default_config(data_name):
         """The default configs."""
         return dict(
             Autoencoder=dict(
-                arch1=[20,1024,1024,64],#20改59
+                arch1=[20,1024,1024,64],
                 arch2=[59,1024,1024,64],
                 activations='relu',
                 batchnorm=False,
@@ -14,9 +14,9 @@ def get_default_config(data_name):
                 seed=0,
                 missing_rate=[0.3],
                 epoch=[90],
-                attr_outlier_rate=[0.02],
-                class_outlier_rate=[0.05],
-                attr_class_outlier_rate=[0.08],
+                attr_outlier_rate=[0.02,0.05,0.08],
+                class_outlier_rate=[0.02,0.05,0.08],
+                attr_class_outlier_rate=[0.02,0.05,0.08],
                 loss_paras=[1,1,0.4],
                 lr=[1e-3],
                 start_seed=[1],
@@ -28,7 +28,7 @@ def get_default_config(data_name):
                 Contr_on_impu_Stepoch=50,
                 
                 Using_K_Contr=1,
-                # Using_triplet=False,
+                
                 Using_KeLeo=1,
                 Using_Contr=True,
                 Contr_on_Impu=True,
@@ -60,10 +60,10 @@ def get_default_config(data_name):
         """The default configs."""
         return dict(
             Autoencoder=dict(
-                arch1=[1750,1024,64],###这里改392跑原版Mnist了！！！#Change  32or64!![392, 1024, 1024, 1024, 64]
+                arch1=[1750,1024,64],
                 arch2=[79,1024,64],
-                activations1='relu',#'relu',#
-                activations2='relu',#'relu',
+                activations1='relu',
+                activations2='relu',
                 batchnorm=False,
                 latent_dim=64,
             ),
@@ -71,9 +71,9 @@ def get_default_config(data_name):
                 seed=0,
                 missing_rate=[0.3],
                 epoch=[130],
-                attr_outlier_rate=[0.02],
-                class_outlier_rate=[0.05],
-                attr_class_outlier_rate=[0.08],
+                attr_outlier_rate=[0.02,0.05,0.08],
+                class_outlier_rate=[0.02,0.05,0.08],
+                attr_class_outlier_rate=[0.02,0.05,0.08],
                 loss_paras=[1,1,0.2],
                 batch_size=[256],
                 num_neibs=[6],
@@ -117,10 +117,10 @@ def get_default_config(data_name):
     elif data_name in ['Fashion']:
         return dict(
             Autoencoder=dict(
-                arch1=[784,1024,256],###这里改392跑原版Mnist了！！！#Change  32or64!![392, 1024, 1024, 1024, 64]
+                arch1=[784,1024,256],
                 arch2=[784,1024,256],
-                activations1='relu',#'relu',#
-                activations2='relu',#'relu',
+                activations1='relu',
+                activations2='relu',
                 batchnorm=False,
                 latent_dim=256,
             ),
@@ -129,9 +129,9 @@ def get_default_config(data_name):
                 seed=0,
                 missing_rate=[0.3],
                 epoch=[400],
-                attr_outlier_rate=[0.02],
-                class_outlier_rate=[0.05],
-                attr_class_outlier_rate=[0.08],
+                attr_outlier_rate=[0.02,0.05,0.08],
+                class_outlier_rate=[0.02,0.05,0.08],
+                attr_class_outlier_rate=[0.02,0.05,0.08],
                 loss_paras=[1,1,0.4],
                 lr=[1e-3],
                 batch_size=[256],
@@ -175,7 +175,7 @@ def get_default_config(data_name):
             Autoencoder=dict(
                 arch1=[59,1024,1024,64],
                 arch2=[40,1024,1024,64],
-                activations='relu',#'relu',#
+                activations='relu',
                 batchnorm=False,
                 latent_dim=64,
             ),
@@ -183,9 +183,9 @@ def get_default_config(data_name):
                 seed=0,
                 missing_rate=[0.3],
                 epoch=[115],
-                attr_outlier_rate=[0.02],
-                class_outlier_rate=[0.05],
-                attr_class_outlier_rate=[0.08],
+                attr_outlier_rate=[0.02,0.05,0.08],
+                class_outlier_rate=[0.02,0.05,0.08],
+                attr_class_outlier_rate=[0.02,0.05,0.08],
                 loss_paras=[1,1,0.2],
                 lr=[1e-3],
                 start_seed=[1],
@@ -230,7 +230,7 @@ def get_default_config(data_name):
                 arch4=[47,1024,1024,64],
                 arch5=[64,1024,1024,64],
                 arch6=[6,1024,1024,64],
-                activations='relu',#'relu',#
+                activations='relu',
                 batchnorm=False,
                 latent_dim=64,
             ),
@@ -239,9 +239,9 @@ def get_default_config(data_name):
                 seed=0,
                 missing_rate=[0.3],
                 epoch=[50],
-                attr_outlier_rate=[0.02],
-                class_outlier_rate=[0.05],
-                attr_class_outlier_rate=[0.08],
+                attr_outlier_rate=[0.02,0.05,0.08],
+                class_outlier_rate=[0.02,0.05,0.08],
+                attr_class_outlier_rate=[0.02,0.05,0.08],
                 loss_paras=[1,1,0.2],
                 lr=[1e-3],
                 start_seed=[1],
@@ -253,7 +253,7 @@ def get_default_config(data_name):
                 Contr_on_impu_Stepoch=50,
                 
                 Using_K_Contr=True,
-                # Using_triplet=False,
+                
                 Using_KeLeo=1,
                 Using_Contr=True,
                 Moreratio=0.05,

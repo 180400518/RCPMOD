@@ -7,7 +7,7 @@ import itertools
 import torch
 import pickle
 
-from model import Completer
+from model import RCPMOD
 from get_mask import get_mask
 from get_outlier import get_attr_class_outlier_rand, get_attribute_outlier_rand, get_outlier
 from util import cal_std, get_logger
@@ -153,8 +153,8 @@ def main():
 
 
                                             
-                                            COMPLETERCOMP = Completer(config,num_v)
-                                            COMPLETERCOMP.to_device(device)
+                                            Rcpmod = RCPMOD(config,num_v)
+                                            Rcpmod.to_device(device)
                                             views = list(range(0, num_v))
                                             C_v = list(itertools.combinations(views, 2))
                                             
@@ -165,7 +165,7 @@ def main():
                                                 
 
                                                 optimizerCOMP = torch.optim.Adam(
-                                                    itertools.chain(COMPLETERCOMP.autoencoders[vc[0]].parameters(), COMPLETERCOMP.autoencoders[vc[1]].parameters(),),
+                                                    itertools.chain(Rcpmod.autoencoders[vc[0]].parameters(), Rcpmod.autoencoders[vc[1]].parameters(),),
                                                     lr=config['training']['lr'][l])
                                                 x1_train=X_list[vc[0]]
                                                 x2_train=X_list[vc[1]]
@@ -220,7 +220,7 @@ def main():
 
                                                 
 
-                                                auc_vc,scores_vc= COMPLETERCOMP.train(config, logger, x1_train, x2_train,
+                                                auc_vc,scores_vc= Rcpmod.train(config, logger, x1_train, x2_train,
                                                                                 mask_vc, optimizerCOMP, device,outlabel_vc,
                                                                                 e,bs,nnb,num_test_time,paras,seed,Y_list_seed,vc)
                                                 

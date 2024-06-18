@@ -30,7 +30,6 @@ from sklearn.neighbors import LocalOutlierFactor
 
 
 class Autoencoder(nn.Module):
-    """AutoEncoder module that projects features to latent space."""
 
     def __init__(self,
                  encoder_dim,
@@ -85,39 +84,14 @@ class Autoencoder(nn.Module):
         self._decoder = nn.Sequential(*decoder_layers)
 
     def encoder(self, x):
-        """Encode sample features.
-
-            Args:
-              x: [num, feat_dim] float tensor.
-
-            Returns:
-              latent: [n_nodes, latent_dim] float tensor, representation Z.
-        """
         latent = self._encoder(x)
         return latent
 
     def decoder(self, latent):
-        """Decode sample features.
-
-            Args:
-              latent: [num, latent_dim] float tensor, representation Z.
-
-            Returns:
-              x_hat: [n_nodes, feat_dim] float tensor, reconstruction x.
-        """
         x_hat = self._decoder(latent)
         return x_hat
 
     def forward(self, x):
-        """Pass through autoencoder.
-
-            Args:
-              x: [num, feat_dim] float tensor.
-
-            Returns:
-              latent: [num, latent_dim] float tensor, representation Z.
-              x_hat:  [num, feat_dim] float tensor, reconstruction x.
-        """
         latent = self.encoder(x)
         x_hat = self.decoder(latent)
         return x_hat, latent
@@ -126,16 +100,10 @@ class Autoencoder(nn.Module):
 
 
 
-class Completer():
-    """COMPLETER module."""
+class RCPMOD():
 
     def __init__(self,
                  config,num_views):
-        """Constructor.
-
-        Args:
-          config: parameters defined in configure.py.
-        """
         self._config = config
 
         if self._config['Autoencoder']['arch1'][-1] != self._config['Autoencoder']['arch2'][-1]:

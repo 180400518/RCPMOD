@@ -146,11 +146,6 @@ def uniform_loss_save(x):
 
 
 def pairwise_NNs_inner(x):
-    """
-    Pairwise nearest neighbors for L2-normalized vectors.
-    Uses Torch rather than Faiss to remain on GPU.
-    """
-    
 
     dots = torch.mm(x, x.t())
     n = x.shape[0]

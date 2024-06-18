@@ -23,9 +23,9 @@ def load_data(config):
     elif data_name in ['LandUse_21']:
         mat = sio.loadmat(os.path.join(main_dir, 'data', 'LandUse-21.mat'))
         train_x = []
-        train_x.append(sparse.csr_matrix(mat['X'][0, 0]).A)  # 20
-        train_x.append(sparse.csr_matrix(mat['X'][0, 1]).A)  # 59
-        train_x.append(sparse.csr_matrix(mat['X'][0, 2]).A)  # 40
+        train_x.append(sparse.csr_matrix(mat['X'][0, 0]).A)  
+        train_x.append(sparse.csr_matrix(mat['X'][0, 1]).A)  
+        train_x.append(sparse.csr_matrix(mat['X'][0, 2]).A)  
         index = random.sample(range(train_x[0].shape[0]), 2100)
         for view in [1, 2]:
             x = train_x[view][index]
@@ -66,7 +66,7 @@ def load_data(config):
         V2=V2.reshape(V2.shape[0], 784)
         V3=V3.reshape(V3.shape[0], 784)
         X_list.append(V1)
-        X_list.append(V2)#如果要更换需要使用的view，要在这里改
+        X_list.append(V2)
 
         Y_list.append(Y)
     
