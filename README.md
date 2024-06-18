@@ -6,7 +6,7 @@ The hyper-parameters, the training options (including **the missing rate** and *
 
 ## Datasets
 
-The BDGP, LandUse-21, Scene-15 and Handwritten datasets are in this repository, but Fashion is to large to upload. Links with Fashion dataset will be uploaded when the code is open-sourced.
+The BDGP, LandUse-21, Scene-15 and Handwritten datasets are in this repository, but Fashion is to large to upload. Download link of Fashion dataset will be uploaded when the code is open-sourced. Here is the original gtihub repository of Fashion https://github.com/zalandoresearch/fashion-mnist
 
 ## Requirements
 
