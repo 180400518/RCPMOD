@@ -21,7 +21,7 @@ def get_default_config(data_name):
                 lr=[1e-3],
                 start_seed=[1],
                 wnn_k=[7],
-                Rw=0.1,
+                Rw=0.25,
                 start_Keleo_loss_epoch=0,
                 saveTnse_epoch=50,
                 change_neg_epoch=5,
@@ -77,7 +77,7 @@ def get_default_config(data_name):
                 loss_paras=[1,1,0.2],
                 batch_size=[256],
                 num_neibs=[6],
-                Rw=0.2,
+                Rw=0.25,
                 lr=[1e-3],
  
                 start_Keleo_loss_epoch=0,
