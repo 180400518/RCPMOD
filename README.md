@@ -1,12 +1,12 @@
 # RCPMOD
-This repo contains the code for "Regularized Contrastive Partial Multi-view Outlier Detection"
+This repo contains the code of ACMMM 2024 "Regularized Contrastive Partial Multi-view Outlier Detection"
 ## Configuration
 
 The hyper-parameters, the training options (including **the missing rate** and **the outlier rate**) are defined in configure.py.
 
 ## Datasets
 
-The BDGP, LandUse-21, Scene-15 and Handwritten datasets are in this repository, but Fashion is to large to upload. Download link of Fashion dataset will be uploaded when the code is open-sourced. Here is the original gtihub repository of Fashion https://github.com/zalandoresearch/fashion-mnist
+The BDGP, LandUse-21, Scene-15 and Handwritten datasets are in this repository, but Fashion is to large to upload. Download link of Fashion dataset : https://pan.baidu.com/s/1OgCGR6zWGk6KCr2kWpbKCw?pwd=ve5b code: ve5b 
 
 ## Requirements
 
